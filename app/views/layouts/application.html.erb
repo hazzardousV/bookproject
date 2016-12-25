@@ -9,6 +9,8 @@
 <body>
 <p class="flash"><%= flash.notice %></p>
 <%= yield %>
+<br>
+<%= link_to "All Books", books_path %><%= link_to "All People", authors_path %>
 
 </body>
 </html>

@@ -1,0 +1,10 @@
+<h1> <%= @author.name %> </h1>
+<p> <%= @author.title %> </p>
+
+<ul>
+	<% @author.books.each do |book| %>
+		<li><%= link_to book.title, book_path(book) %> </li>
+	<% end %>
+</ul>
+
+<%= link_to "<< Back to Books List", books_path %>
