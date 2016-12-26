@@ -1,10 +1,16 @@
 <h1> <%= @author.name %> </h1>
 <p> <%= @author.title %> </p>
+<% #problem here, figure out links %>
 
+<p> <%= link_to @author.link %> </p>
+<p> <% if @author.image.exists? %>
+		<%= image_tag @author.image.url %></p>
+	<% end %>
+<p> Golly Gee, I really liked: </p>
 <ul>
 	<% @author.books.each do |book| %>
 		<li><%= link_to book.title, book_path(book) %> </li>
 	<% end %>
 </ul>
-
-<%= link_to "<< Back to Books List", books_path %>
+<%= link_to "edit", edit_author_path(@author) %>
+<%= link_to "delete", author_path(@author), method: :delete, data: {confirm: "Really delete this guy? Think about it, Tyler"}%>
