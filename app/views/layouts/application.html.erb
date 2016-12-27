@@ -12,6 +12,13 @@
 <br>
 <%= link_to "All Books", books_path %>
 <%= link_to "All People", authors_path %>
-
+<br>
+<h6>
+        <% if logged_in? %>
+          <%= "Logged in as #{current_user.email}" %>
+          <%= link_to "(logout)", logout_path %>
+        <% else %>
+          <%= link_to "(login)", login_path %>
+        <% end %></h6>
 </body>
 </html>

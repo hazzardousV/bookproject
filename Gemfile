@@ -50,5 +50,6 @@ group :development do
   gem 'spring'
   gem "paperclip"
   gem 'sorcery'
+ 
 end
 
