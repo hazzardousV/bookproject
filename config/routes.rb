@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   resources :books
   resources :authors
   resources :admins
-  resources :admin_sessions, only: [ :new, :create, :destroy ]
+  resources :author_sessions, only: [ :new, :create, :destroy ]
 
   get 'login' => 'author_sessions#new'
-  get 'logiout' => 'author_sessions#destroy'
+  get 'logout' => 'author_sessions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
