@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login, except: [:new, :create]
+  before_filter :zero_admins_or_authenticated, only: [:new, :create]
   # GET /admins
   # GET /admins.json
   def index
@@ -13,6 +14,15 @@ class AdminsController < ApplicationController
   end
 
   # GET /admins/new
+  
+
+  def zero_admins_or_authenticated
+    unless Admin.count == 0 || current_user
+      redirect_to root_path
+      return false
+    end
+  end
+
   def new
     @admin = Admin.new
   end

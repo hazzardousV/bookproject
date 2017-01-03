@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
 	include AuthorsHelper
+	before_filter :require_login, except: [:new, :create]
 	def show
 		@author = Author.find(params[:id])
 	end

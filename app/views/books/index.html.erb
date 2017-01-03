@@ -8,5 +8,6 @@
 		</li>
 	<% end %>
 </ul>
-
+<% if logged_in? %>
 <%= link_to "Add a New Book", new_book_path, class:'new_book' %>
+<% end %>

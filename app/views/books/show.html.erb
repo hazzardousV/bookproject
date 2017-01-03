@@ -7,10 +7,13 @@
 <p><%= @book.body %> </p>
 <p>
 	Who recommends this book?
+</p>
 	<% @book.authors.each do |author| %>
 		<%= link_to author.name, author_path(author) %>
 	<% end %>
-</p>
+	<br>
 <%= link_to "<< Back to Books List", books_path %>
+<% if logged_in? %>
 <%= link_to "edit", edit_book_path(@book) %>
 <%= link_to "delete", book_path(@book), method: :delete, data: {confirm: "Really delete the article?"}%>
+<% end %>
