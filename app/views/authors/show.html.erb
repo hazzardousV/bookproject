@@ -1,8 +1,8 @@
 <h1> <%= @author.name %> </h1>
 <p> <%= @author.title %> </p>
-<% #problem here, figure out links %>
+<!--problem here, figure out links -->
 
-<p> <%= link_to @author.link %> </p>
+<p> <%= link_to @author.link, @author.link %>  </p>
 <p> <% if @author.image.exists? %>
 		<%= image_tag @author.image.url %></p>
 	<% end %>

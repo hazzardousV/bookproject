@@ -7,16 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="flash"><%= flash.notice %></p>
-<%= yield %>
-<br>
-<%= link_to "All Books", books_path, class: 'button' %>
-<%= link_to "All People", authors_path %>
-<br>
-<h6>
+	<section class="hero">
+		<div class="container">
+			<h1> Look4Books </h1>
+		</div>
+	</section>
+	<nav class="navigation">
+		<a href="#" class="menu-icon">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ul class="main-navigation" role="navigation">
+			<li><a href="#hero">Home</a></li>
+			<li><a href="#books">Books</a></li>
+			<li><a href="#people">People</a></li>
+		</ul>
+	</nav>
+	<p class="flash"><%= flash.notice %></p>
+	<%= yield %>
+	<br class="u-full-width">
+	<%= link_to "All Books", books_path, class: 'button' %>
+	<%= link_to "All People", authors_path, class: 'button' %>
+	<br>
+	<h6>
         <% if logged_in? %>
           <%= "Logged in as #{current_user.email}" %>
           <%= link_to "(logout)", logout_path %>
-        <% end %></h6>
+        <% end %>
+    </h6>
 </body>
 </html>

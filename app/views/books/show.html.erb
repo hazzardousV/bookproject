@@ -14,6 +14,6 @@
 	<br>
 <%= link_to "<< Back to Books List", books_path %>
 <% if logged_in? %>
-<%= link_to "edit", edit_book_path(@book) %>
-<%= link_to "delete", book_path(@book), method: :delete, data: {confirm: "Really delete the article?"}%>
+	<%= link_to "edit", edit_book_path(@book) %>
+	<%= link_to "delete", book_path(@book), method: :delete, data: {confirm: "Really delete the article?"}%>
 <% end %>
