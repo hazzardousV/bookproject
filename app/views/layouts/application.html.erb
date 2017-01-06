@@ -7,9 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<section class="hero">
-		<div class="container">
-			<h1> Look4Books </h1>
+	<section id="hero" class="hero u-full-width">
+		<div class="hero-image"></div>
+		<dive class="container centered">
+			<div class="twelve columns">
+				<h1 class="separator"> Look4Books </h1>
+				<h2> Life changing books from all kinds of people </h2>
+			</div>
 		</div>
 	</section>
 	<nav class="navigation">
@@ -25,8 +29,10 @@
 	<p class="flash"><%= flash.notice %></p>
 	<%= yield %>
 	<br class="u-full-width">
-	<%= link_to "All Books", books_path, class: 'button' %>
-	<%= link_to "All People", authors_path, class: 'button' %>
+	<div class="container-centered">
+		<%= link_to "All Books", books_path, class: 'button' %>
+		<%= link_to "All People", authors_path, class: 'button' %>
+	</div>	
 	<br>
 	<h6>
         <% if logged_in? %>
